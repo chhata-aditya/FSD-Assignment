@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chhata's Studio · Create Account</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="signup-wrapper">
+    <form id="signup" class="glass-form" novalidate>
+      <header class="form-header">
+        <span class="studio-pill">🌿 CHHATA DESIGN</span>
+        <h1>Join Studio</h1>
+        <p class="subtext">Set up your creative membership account</p>
+      </header>
+
+      <div class="input-block">
+        <label for="name">Your Name</label>
+        <input id="name" type="text" autocomplete="name" placeholder="Chhata..." />
+        <p class="error-text" id="name-msg"></p>
+      </div>
+
+      <div class="input-block">
+        <label for="email">Email Address</label>
+        <input id="email" type="email" autocomplete="email" placeholder="chhata@example.com" />
+        <p class="error-text" id="email-msg"></p>
+      </div>
+
+      <div class="input-block">
+        <label for="phone">Phone Number</label>
+        <input id="phone" type="tel" autocomplete="tel" placeholder="10 digits" />
+        <p class="error-text" id="phone-msg"></p>
+      </div>
+
+      <div class="input-block">
+        <div class="label-split">
+          <label for="password">Password</label>
+          <span class="pw-guideline">8+ chars, mixed cases</span>
+        </div>
+        <div class="pw-container">
+          <input id="password" type="password" autocomplete="new-password" placeholder="••••••••" />
+          <button type="button" id="togglePw" class="btn-toggle">Show</button>
+        </div>
+        <div class="meter-track">
+          <div id="strengthBar" class="meter-bar"></div>
+        </div>
+        <p class="error-text" id="password-msg"></p>
+      </div>
+
+      <button type="submit" class="btn-register">Create My Account</button>
+      <div id="result" class="alert-box"></div>
+    </form>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

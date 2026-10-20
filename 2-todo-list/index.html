@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chhata's Space · Daily Focus</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="board-glass">
+    <header class="board-header">
+      <div class="user-info">
+        <span class="user-pill">🌿 Chhata's Space</span>
+        <h1>Daily Flow</h1>
+      </div>
+      <div id="counter" class="status-chip"></div>
+    </header>
+
+    <form id="taskForm" class="add-task-bar">
+      <input type="text" id="taskInput" placeholder="Write down something you'd like to do today..." autocomplete="off" />
+      <button type="submit" class="btn-create">Add</button>
+    </form>
+
+    <div class="list-container">
+      <ul id="taskList" class="task-list"></ul>
+      <div id="emptyMsg" class="empty-view">
+        <div class="plant-symbol">🌱</div>
+        <p class="empty-main">Peace and quiet.</p>
+        <p class="empty-sub">Your day is open. Add your first goal!</p>
+      </div>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

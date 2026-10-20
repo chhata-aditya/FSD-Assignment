@@ -1,0 +1,197 @@
+/* Minimalist Cream & Matcha Sage Glassmorphic Calculator — Chhata Edition */
+:root {
+  --bg-cream: #fbf9f4;
+  --bg-glass: rgba(255, 255, 255, 0.72);
+  --bg-screen: rgba(244, 248, 244, 0.85);
+  --border-glass: rgba(255, 255, 255, 0.8);
+  --border-subtle: rgba(147, 169, 143, 0.25);
+  --matcha-sage: #6b8e6b;
+  --matcha-dark: #3e593e;
+  --matcha-light: #d8e5d8;
+  --matcha-glow: rgba(107, 142, 107, 0.25);
+  --text-dark: #233123;
+  --text-muted: #6b7c6b;
+  --btn-num-bg: rgba(255, 255, 255, 0.85);
+  --btn-num-hover: #ffffff;
+  --btn-op-bg: #e8efe8;
+  --btn-op-hover: #dbe7db;
+  --btn-fn-bg: #f0f4f0;
+  --shadow-float: 0 24px 48px -12px rgba(80, 105, 80, 0.16), 0 0 0 1px rgba(255, 255, 255, 0.9);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle at 50% 10%, #f1f6f1 0%, var(--bg-cream) 80%);
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  color: var(--text-dark);
+  padding: 24px 16px;
+}
+
+.calc-glass {
+  width: 100%;
+  max-width: 340px;
+  background: var(--bg-glass);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-radius: 28px;
+  padding: 24px;
+  box-shadow: var(--shadow-float);
+  border: 1px solid var(--border-glass);
+}
+
+.calc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+  padding: 0 4px;
+}
+
+.leaf-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.leaf-icon {
+  font-size: 15px;
+}
+
+.brand-text {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--matcha-dark);
+}
+
+.mode-tag {
+  font-size: 10.5px;
+  font-weight: 600;
+  background: rgba(107, 142, 107, 0.15);
+  color: var(--matcha-dark);
+  padding: 3px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(107, 142, 107, 0.25);
+  letter-spacing: 0.05em;
+}
+
+.screen {
+  background: var(--bg-screen);
+  border: 1px solid var(--border-subtle);
+  border-radius: 20px;
+  padding: 16px 20px;
+  text-align: right;
+  margin-bottom: 22px;
+  min-height: 98px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: inset 0 2px 6px rgba(107, 142, 107, 0.08);
+}
+
+.history-display {
+  color: var(--text-muted);
+  font-size: 13.5px;
+  min-height: 18px;
+  letter-spacing: 0.04em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.current-display {
+  color: var(--text-dark);
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.1;
+  word-break: break-all;
+}
+
+.keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.key {
+  height: 58px;
+  font-size: 19px;
+  font-weight: 600;
+  font-family: inherit;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.16s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 8px rgba(90, 110, 90, 0.06);
+}
+
+.key:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(90, 110, 90, 0.12);
+}
+
+.key:active {
+  transform: translateY(1px);
+}
+
+/* Number buttons */
+.key.num {
+  background: var(--btn-num-bg);
+  color: var(--text-dark);
+}
+.key.num:hover {
+  background: var(--btn-num-hover);
+}
+
+.key.zero {
+  grid-column: span 2;
+}
+
+/* Clear & functions */
+.key.fn-clear {
+  background: #fdf2f2;
+  color: #d9534f;
+  border-color: rgba(217, 83, 79, 0.2);
+}
+
+.key.fn {
+  background: var(--btn-fn-bg);
+  color: var(--text-dark);
+}
+
+/* Operator buttons */
+.key.op {
+  background: var(--btn-op-bg);
+  color: var(--matcha-dark);
+  font-size: 20px;
+}
+.key.op:hover {
+  background: var(--btn-op-hover);
+}
+
+/* Equals button */
+.key.equals {
+  grid-row: span 2;
+  height: 100%;
+  background: linear-gradient(135deg, #7da57d, #5d835d);
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 700;
+  box-shadow: 0 6px 18px var(--matcha-glow);
+  border: none;
+}
+.key.equals:hover {
+  filter: brightness(1.05);
+  box-shadow: 0 8px 22px rgba(107, 142, 107, 0.35);
+}

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chhata · Creative Web Studio & Assignments</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-cream: #faf8f2;
+      --bg-glass: rgba(255, 255, 255, 0.72);
+      --border-glass: rgba(255, 255, 255, 0.85);
+      --border-subtle: rgba(107, 142, 107, 0.2);
+      --matcha-sage: #6b8e6b;
+      --matcha-dark: #374b37;
+      --matcha-light: #e4eee4;
+      --text-main: #233123;
+      --text-muted: #657565;
+      --text-dim: #8d9c8d;
+      --shadow-float: 0 24px 48px -12px rgba(70, 95, 70, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.85);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      background: radial-gradient(circle at 50% 0%, #f0f6f0 0%, var(--bg-cream) 80%);
+      font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+      color: var(--text-main);
+      padding: 48px 20px 80px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .hub-wrap {
+      width: 100%;
+      max-width: 960px;
+    }
+
+    .hero-section {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .leaf-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--matcha-dark);
+      background: var(--matcha-light);
+      border: 1px solid rgba(107, 142, 107, 0.25);
+      padding: 5px 14px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: 38px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--text-main);
+      margin-bottom: 12px;
+    }
+
+    .subtitle {
+      font-size: 16px;
+      color: var(--text-muted);
+      max-width: 620px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+
+    .card {
+      background: var(--bg-glass);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid var(--border-glass);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: var(--shadow-float);
+      display: flex;
+      flex-direction: column;
+      transition: all 0.22s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 25px 50px -15px rgba(70, 95, 70, 0.18);
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+
+    .module-code {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--matcha-dark);
+      background: var(--matcha-light);
+      padding: 3px 10px;
+      border-radius: 8px;
+      border: 1px solid rgba(107, 142, 107, 0.2);
+    }
+
+    .status-note {
+      font-size: 11px;
+      color: var(--text-dim);
+    }
+
+    .card h2 {
+      font-size: 21px;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 24px;
+      flex: 1;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 24px;
+    }
+
+    .tag-item {
+      font-size: 11px;
+      color: var(--text-muted);
+      background: #ffffff;
+      border: 1px solid var(--border-subtle);
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+
+    .open-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 18px;
+      background: linear-gradient(135deg, #7da57d, #5d835d);
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      border-radius: 14px;
+      box-shadow: 0 4px 14px rgba(107, 142, 107, 0.25);
+      transition: all 0.18s ease;
+    }
+
+    .open-btn:hover {
+      filter: brightness(1.06);
+      transform: translateY(-1px);
+    }
+
+    footer {
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-dim);
+      padding-top: 24px;
+      border-top: 1px solid var(--border-subtle);
+    }
+  </style>
+</head>
+<body>
+  <div class="hub-wrap">
+    <header class="hero-section">
+      <div class="leaf-tag">
+        <span>🌿</span>
+        Matcha &amp; Cream Edition
+      </div>
+      <h1>Chhata · Creative Web Projects</h1>
+      <p class="subtitle">
+        An organic, minimalist showcase of interactive frontend applications crafted with gentle colors, smooth transitions, and clean code.
+      </p>
+    </header>
+
+    <div class="cards-grid">
+      <!-- Project 1 -->
+      <article class="card">
+        <div class="card-top">
+          <span class="module-code">01 · CALCULATOR</span>
+          <span class="status-note">Matcha Air</span>
+        </div>
+        <h2>Aesthetic Calculator</h2>
+        <p>Tactile keypad calculator with arithmetic dispatch, gentle error handling, and complete keyboard shortcuts.</p>
+        <div class="tags">
+          <span class="tag-item">JavaScript ES6</span>
+          <span class="tag-item">Keyboard Support</span>
+          <span class="tag-item">Glassmorphism</span>
+        </div>
+        <a href="1-calculator/index.html" class="open-btn">
+          <span>Open Calculator</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </article>
+
+      <!-- Project 2 -->
+      <article class="card">
+        <div class="card-top">
+          <span class="module-code">02 · TASK FLOW</span>
+          <span class="status-note">Daily Space</span>
+        </div>
+        <h2>Daily Flow Tracker</h2>
+        <p>Peaceful task management tool with automatic browser memory, custom check markers, and completion counters.</p>
+        <div class="tags">
+          <span class="tag-item">DOM API</span>
+          <span class="tag-item">LocalStorage</span>
+          <span class="tag-item">Custom State</span>
+        </div>
+        <a href="2-todo-list/index.html" class="open-btn">
+          <span>Open Task Flow</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </article>
+
+      <!-- Project 3 -->
+      <article class="card">
+        <div class="card-top">
+          <span class="module-code">03 · STUDIO FORM</span>
+          <span class="status-note">Interactive</span>
+        </div>
+        <h2>Studio Registration</h2>
+        <p>Real-time form verification engine with instant regex feedback, password entropy indicator, and custom alerts.</p>
+        <div class="tags">
+          <span class="tag-item">Regex Rules</span>
+          <span class="tag-item">Strength Meter</span>
+          <span class="tag-item">Accessibility</span>
+        </div>
+        <a href="3-form-validation/index.html" class="open-btn">
+          <span>Open Studio Form</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </article>
+    </div>
+
+    <footer>
+      <p>Designed with care by <strong>Chhata</strong> · Minimalist Cream &amp; Matcha Sage</p>
+    </footer>
+  </div>
+</body>
+</html>
